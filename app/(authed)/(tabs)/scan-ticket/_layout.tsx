@@ -33,8 +33,11 @@ export default function ScanTicketScreen() {
       setScanningEnabled(false);
 
       const [ticket, owner] = data.split(",");
+      console.log(data);
       const ticketId = parseInt(ticket.split(":")[1]);
       const ownerId = parseInt(owner.split(":")[1]);
+      console.log(ticketId);
+      console.log(ownerId);
 
       await ticketService.validateOne(ticketId, ownerId);
 
